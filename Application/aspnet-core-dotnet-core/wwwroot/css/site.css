@@ -98,7 +98,7 @@ body {
 
 .content {
     box-sizing: border-box;
-    max-width: 450px;
+    max-width: 300px;
     position: relative;
     margin: auto;
 }
