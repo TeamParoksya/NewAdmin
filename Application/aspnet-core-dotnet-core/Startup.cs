@@ -47,6 +47,13 @@ namespace aspnet_core_dotnet_core
                 app.UseExceptionHandler("/Error");
             }
 
+            var builder = new ConfigurationBuilder()
+                      .SetBasePath(env.ContentRootPath);
+
+            // Adds JSON settings
+            builder.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+            builder.AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true);
+
             app.UseStaticFiles();
             app.UseCookiePolicy();
             app.UseRouting();
