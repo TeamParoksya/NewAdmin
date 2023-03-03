@@ -61,14 +61,16 @@ body {
 .main-container {
     height: 400px;
     width: 100%;
-    background-color: #1d539d;
+    background-color: lightskyblue;
     color: white;
     padding-top: 30px;
     box-sizing: border-box;
     overflow-y: hidden;
     overflow-x: hidden;
+    border-radius:50px;
     padding: 80px;
     margin-bottom: 30px;
+    margin-top: 10px;
 }
 
 .cloud-image {
