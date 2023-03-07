@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Connections;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Configuration;
+using aspnet_core_dotnet_core.Model;
 
 namespace aspnet_core_dotnet_core.Pages
 {
@@ -13,15 +14,14 @@ namespace aspnet_core_dotnet_core.Pages
     public class IndexModel : PageModel
     {
 
-        public IConfiguration _configuration;
+        public readonly IConfiguration _configuration;
 
-        public IndexModel(IConfiguration configuration)
-        {
-            _configuration = configuration;
-        }
 
-        public string Name { get; set; }
-        public string Description { get; set; }
+
+        //public IndexModel(IConfiguration configuration)
+        //{
+        //    _configuration = configuration;
+        //}
         public void OnGet()
         {
 
@@ -37,15 +37,11 @@ namespace aspnet_core_dotnet_core.Pages
             return result;
         }
 
-        //public List<string> Get()
-        //{
-        //    List<string> result = new List<string>() {
-        //        _configuration["DatabaseConnectionString"],
-        //            _configuration["RedisCache"]
-        //    };
-        //    return result;
-
-        //}
+        public string Conn2()
+        {
+            var result = _configuration["SecretKey"];
+            return result;
+        }
 
     }
 }
