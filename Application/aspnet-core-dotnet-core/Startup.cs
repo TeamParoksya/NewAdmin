@@ -33,6 +33,7 @@ namespace aspnet_core_dotnet_core
 
 
             services.AddRazorPages();
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -53,9 +54,11 @@ namespace aspnet_core_dotnet_core
             // Adds JSON settings
             builder.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
             builder.AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true);
+            
 
             app.UseStaticFiles();
             app.UseCookiePolicy();
+            //app.UseMvc();
             app.UseRouting();
             app.UseAuthorization();
 

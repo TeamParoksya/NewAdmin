@@ -2,6 +2,7 @@
 @model IndexModel
 @{
     ViewData["Title"] = "Home Page - ASP.NET Core";
+    
 }
 
 <div class="main-container">
@@ -19,7 +20,7 @@
 
 <div class="row align-content-center">
 
-    <div class="col-md-4">
+    @*<div class="col-md-4">
         <h2>Continuous Delivery</h2>
         <p>View your GitHub workflow and customize it as per your needs</p>
         <p>Learn more &raquo;</p>
@@ -29,5 +30,13 @@
         <p>View your GitHub workflow and customize it as per your needs</p>
         <p>Learn more &raquo;</p>
     </div>
+
+*@
+
+
+    @Model.Conn()
+    
+
+
 </div>
 
