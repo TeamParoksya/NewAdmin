@@ -2,10 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -31,7 +33,7 @@ namespace aspnet_core_dotnet_core
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-
+     
             services.AddRazorPages();
             services.AddMvc();
         }
@@ -54,7 +56,7 @@ namespace aspnet_core_dotnet_core
             // Adds JSON settings
             builder.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
             builder.AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true);
-            
+
 
             app.UseStaticFiles();
             app.UseCookiePolicy();
@@ -62,7 +64,8 @@ namespace aspnet_core_dotnet_core
             app.UseRouting();
             app.UseAuthorization();
 
-            app.UseEndpoints(endpoints => {
+            app.UseEndpoints(endpoints =>
+            {
                 endpoints.MapRazorPages();
             });
         }

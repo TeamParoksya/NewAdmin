@@ -18,10 +18,10 @@ namespace aspnet_core_dotnet_core.Pages
 
 
 
-        //public IndexModel(IConfiguration configuration)
-        //{
-        //    _configuration = configuration;
-        //}
+        public IndexModel(IConfiguration configuration)
+        {
+            _configuration = configuration;
+        }
         public void OnGet()
         {
 
