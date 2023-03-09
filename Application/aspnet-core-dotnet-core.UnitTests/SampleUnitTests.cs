@@ -12,7 +12,7 @@ namespace aspnet_core_dotnet_core.UnitTests
         public void IndexPageTest()
         {
             //IndexModel model = new IndexModel();
-            Assert.AreEqual("Index","");
+            Assert.AreEqual("Index", actual:"" );
         }
 
     }

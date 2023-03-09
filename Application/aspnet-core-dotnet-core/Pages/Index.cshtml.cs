@@ -16,11 +16,11 @@ namespace aspnet_core_dotnet_core.Pages
 
         public IConfiguration _configuration ;
         //public IndexModel() { }
-
         
+
         public IndexModel(IConfiguration configuration)
         {
-            _configuration = configuration;
+           _configuration = configuration;
         }
         public void OnGet()
         {
