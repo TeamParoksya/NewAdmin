@@ -15,7 +15,7 @@ namespace aspnet_core_dotnet_core.Pages
     {
 
         public readonly IConfiguration _configuration;
-
+        public IndexModel() { }
 
 
         public IndexModel(IConfiguration configuration)
